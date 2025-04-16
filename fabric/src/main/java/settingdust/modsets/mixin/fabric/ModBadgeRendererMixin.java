@@ -41,7 +41,7 @@ public abstract class ModBadgeRendererMixin {
             for (final ModSet modSet : ModSetsIngameConfig.INSTANCE.getModIdToModSets().get(mod.getId())) {
                 drawBadge(
                     guiGraphics,
-                    modSet.getText().getOrderedText(),
+                    modSet.getText().getVisualOrderText(),
                     Mod.Badge.MODPACK.getOutlineColor(),
                     Mod.Badge.MODPACK.getFillColor(),
                     mouseX,
