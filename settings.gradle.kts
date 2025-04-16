@@ -91,7 +91,7 @@ dependencyResolutionManagement.versionCatalogs.create("catalog") {
     library("yacl-fabric", "dev.isxander", "yet-another-config-lib").version("$yaclVersion+1.20.1-fabric")
     library("yacl-forge", "dev.isxander", "yet-another-config-lib").version("$yaclVersion+1.20.1-forge")
 
-    library("modmenu", "com.terraformersmc", "modmenu").version("7.2.2")
+    library("modmenu", "com.terraformersmc", "modmenu").version("14.0.0-rc.2")
 
     // https://modrinth.com/mod/preloading-tricks/versions
     library("preloading-tricks", "maven.modrinth", "preloading-tricks").version("1.2.3")
