@@ -3,7 +3,7 @@ package settingdust.modsets.mixin.fabric;
 import com.terraformersmc.modmenu.util.mod.Mod;
 import com.terraformersmc.modmenu.util.mod.ModBadgeRenderer;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.text.OrderedText;
+import net.minecraft.util.FormattedCharSequence;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,12 +21,10 @@ public abstract class ModBadgeRendererMixin {
 
     @Shadow
     public abstract void drawBadge(
-        final GuiGraphics par1,
-        final OrderedText par2,
-        final int par3,
-        final int par4,
-        final int par5,
-        final int par6
+        final GuiGraphics guiGraphics,
+        final FormattedCharSequence par2,
+        final int outlineColor,
+        final int fillColor
     );
 
     @Inject(method = "draw", at = @At("TAIL"))
@@ -43,9 +41,7 @@ public abstract class ModBadgeRendererMixin {
                     guiGraphics,
                     modSet.getText().getVisualOrderText(),
                     Mod.Badge.MODPACK.getOutlineColor(),
-                    Mod.Badge.MODPACK.getFillColor(),
-                    mouseX,
-                    mouseY
+                    Mod.Badge.MODPACK.getFillColor()
                 );
             }
         } catch (Exception ignored) {
